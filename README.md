@@ -1,5 +1,6 @@
-# Correlation-Tests-R
+# Health Score Prediction Model: The Impact of Lifestyle and Demographic Factors
 
+![health](https://github.com/user-attachments/assets/41068931-b9f8-4716-8353-888074c47c66)
 
 
 ## Veri Yükleme ve Ön İşlemeler
@@ -20,6 +21,9 @@ Veri setindeki sayısal değişkenlerin özet istatistikleri (summary(dataset)) 
 
 Yaş, BMI, Diyet kalitesi, Uyku saatleri, Alkol tüketimi ve Sağlık skoru gibi değişkenlerin histogramları çizildi. 
 
+![distrubution](https://github.com/user-attachments/assets/122d9ce1-8ade-4447-bef2-d9b7d8283e3f)
+
+
 ## Korelasyon Analizi
 
 Korelasyon matrisi hesaplandı ve sayısal değişkenler arasındaki ilişkiler incelendi
@@ -28,16 +32,19 @@ Korelasyon matrisi hesaplandı ve sayısal değişkenler arasındaki ilişkiler 
 - **Diyet kalitesi ile Sağlık Skoru arasında güçlü bir pozitif ilişki (0.681), bu da daha kaliteli bir diyetin daha iyi sağlık skorları ile ilişkili olduğunu gösteriyor.**
 - **Alkol tüketimi ve Sağlık Skoru arasında negatif bir ilişki (-0.138).**
   
+![pairs](https://github.com/user-attachments/assets/01ddbf8f-b017-431d-a319-0939045c1d28)
+
 Ayrıca scatterplot matrisi ile değişkenler arasındaki ilişkiler görselleştirildi
 
 ## Doğrusal Regresyon Modeli
 
 Basit doğrusal regresyon modeli kurulmuş (lm() fonksiyonu):
+
 - **Bağımlı değişken: Sağlık Skoru.**
 - **Bağımsız değişkenler: Yaş, BMI, Egzersiz sıklığı, Diyet kalitesi, Uyku saatleri, Sigara içme durumu, Alkol tüketimi.**
   
 **Model özeti:** Modelin R-kare değeri 0.834, yani model veriyi %83.4 oranında açıklayabiliyor.
-
+  
 ## Modelin Önemli Sonuçları:
 
 - **Yaş**: Yaşın sağlık skoru üzerindeki etkisi negatiftir. Yani yaş arttıkça sağlık skoru düşer. Bu ilişkinin katsayısı -0.238'dir. Bu, yaş başına sağlık skorunun 0.238 birim azaldığını gösterir.
@@ -58,6 +65,10 @@ Basit doğrusal regresyon modeli kurulmuş (lm() fonksiyonu):
 - **R² (R-kare):** 0.8116. Bu değer, modelin test verisi üzerinde %81.16 oranında bir açıklama sağladığını gösteriyor, bu da modelin genelleme yeteneğinin hala oldukça iyi olduğunu fakat eğitim verisi kadar başarılı olmadığını gösteriyor.
 - **MSE (Ortalama Kare Hata):** 40.36. Bu, eğitim verisine göre test verisindeki hata oranının arttığını gösteriyor. Bu artış, modelin test verisi üzerinde bazı hatalar yapmaya başladığını işaret ediyor.
 - **MAE (Ortalama Mutlak Hata):** 5.22. Test verisi üzerindeki tahminlerin gerçek değerlere olan ortalama uzaklığı 5.22 birimdir, bu da test setinde modelin başarısının biraz düştüğünü gösteriyor.
+  
+![health score](https://github.com/user-attachments/assets/e9822d49-db2b-4c79-9a7b-8d82711beebe)
+![random_forest](https://github.com/user-attachments/assets/02749331-ba2a-4ac8-a1a9-8caf438ede10)
+
 
 ##  Polinomial Regresyon Modeli:
 
@@ -72,6 +83,8 @@ Basit doğrusal regresyon modeli kurulmuş (lm() fonksiyonu):
 - **R² (R-kare):** 0.8257. Polinomial regresyon modelinin test verisi üzerindeki R² değeri %82.57, bu da modelin test verisinde de makul derecede iyi performans gösterdiğini fakat Random Forest modeline göre biraz daha düşük olduğunu belirtiyor.
 - **MSE (Ortalama Kare Hata):** 30.27. Polinomial regresyon modelinin test verisi üzerindeki hata oranı, eğitim verisine göre pek farklı değil, ancak Random Forest’a göre daha düşük.
 - **MAE (Ortalama Mutlak Hata):** 4.32. Bu da, modelin tahminlerinin gerçek değerlere ortalama olarak 4.32 birim uzaklıkta olduğunu gösteriyor. Test verisi üzerinde daha iyi bir performans sergilediği görülüyor.
+  
+![random_vs_polinominal](https://github.com/user-attachments/assets/9da54274-5e5e-4f5c-a868-3afa78a701a9)
 
 ## Sonuç:
 
@@ -84,15 +97,16 @@ Her iki model de eğitim verisi üzerinde oldukça iyi performans gösteriyor, a
 
 İlk olarak, Random Forest ve Polinomial Regresyon modellerinin gerçek değerlerle tahmin edilen değerleri arasındaki farkı görselleştirdik. 
 
+![random_vs_polinominal](https://github.com/user-attachments/assets/8d39d149-bcff-4a44-9585-9488b8dcff88)
+
 ## Özetleyici İstatistikler ve Hata Analizi
 
 Her iki modelin tahmin hatalarını analiz ettik. 
 
-Random Forest Hata Dağılımı:
-error_rf veri çerçevesi, Random Forest modelinin tahmin hatalarını içeriyor. Bu hataları histogram şeklinde görselleştirerek, modelin tahmin hatalarının ne kadar dağıldığını ve hangi değere daha yakın olduğunu inceleyebildik.
-Polinomial Regresyon Hata Dağılımı:
-Benzer şekilde, error_poly veri çerçevesi Polinomial Regresyon modelinin hata dağılımını içeriyor. Bu modelin hata dağılımını da histogramla görselleştirerek, tahmin hatalarının özelliklerini gözlemledik.
-Bu tür analizler, modellerin doğruluğu hakkında daha derin bir anlayış sağlar. Histogramlar, model hatalarının simetrik olup olmadığını, çarpıklık içerip içermediğini ve modelin tutarlılığını anlamamıza yardımcı olur.
+- **Random Forest Hata Dağılımı:** error_rf veri çerçevesi, Random Forest modelinin tahmin hatalarını içeriyor. Bu hataları histogram şeklinde görselleştirerek, modelin tahmin hatalarının ne kadar dağıldığını ve hangi değere daha yakın olduğunu inceleyebildik.
+  
+- **Polinomial Regresyon Hata Dağılımı:** Benzer şekilde, error_poly veri çerçevesi Polinomial Regresyon modelinin hata dağılımını içeriyor. Bu modelin hata dağılımını da histogramla görselleştirerek, tahmin hatalarının özelliklerini gözlemledik.
+
 
 ## Model Hiperparametre Optimizasyonu (Random Forest)
 
