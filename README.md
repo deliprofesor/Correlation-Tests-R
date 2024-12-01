@@ -66,7 +66,6 @@ Basit doğrusal regresyon modeli kurulmuş (lm() fonksiyonu):
 - **MSE (Ortalama Kare Hata):** 40.36. Bu, eğitim verisine göre test verisindeki hata oranının arttığını gösteriyor. Bu artış, modelin test verisi üzerinde bazı hatalar yapmaya başladığını işaret ediyor.
 - **MAE (Ortalama Mutlak Hata):** 5.22. Test verisi üzerindeki tahminlerin gerçek değerlere olan ortalama uzaklığı 5.22 birimdir, bu da test setinde modelin başarısının biraz düştüğünü gösteriyor.
   
-![health score](https://github.com/user-attachments/assets/e9822d49-db2b-4c79-9a7b-8d82711beebe)
 ![random_forest](https://github.com/user-attachments/assets/02749331-ba2a-4ac8-a1a9-8caf438ede10)
 
 
@@ -83,8 +82,6 @@ Basit doğrusal regresyon modeli kurulmuş (lm() fonksiyonu):
 - **R² (R-kare):** 0.8257. Polinomial regresyon modelinin test verisi üzerindeki R² değeri %82.57, bu da modelin test verisinde de makul derecede iyi performans gösterdiğini fakat Random Forest modeline göre biraz daha düşük olduğunu belirtiyor.
 - **MSE (Ortalama Kare Hata):** 30.27. Polinomial regresyon modelinin test verisi üzerindeki hata oranı, eğitim verisine göre pek farklı değil, ancak Random Forest’a göre daha düşük.
 - **MAE (Ortalama Mutlak Hata):** 4.32. Bu da, modelin tahminlerinin gerçek değerlere ortalama olarak 4.32 birim uzaklıkta olduğunu gösteriyor. Test verisi üzerinde daha iyi bir performans sergilediği görülüyor.
-  
-![random_vs_polinominal](https://github.com/user-attachments/assets/9da54274-5e5e-4f5c-a868-3afa78a701a9)
 
 ## Sonuç:
 
