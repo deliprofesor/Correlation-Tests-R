@@ -5,7 +5,7 @@
 
 ## Veri Yükleme ve Ön İşlemeler
 
-- **Veri kümesi yüklenmdi ve ilk birkaç satırı görüntülendi. Verilerdeki eksik değerler kontrol edilip, verilerin temiz olduğu görüldü (sum(is.na(dataset)) = 0).**
+- **Veri kümesi yüklendi ve ilk birkaç satırı görüntülendi. Verilerdeki eksik değerler kontrol edilip, verilerin temiz olduğu görüldü (sum(is.na(dataset)) = 0).**
 - **BMI (Body Mass Index) kategorilerine ayrılmış (Düşük, Normal, Yüksek, Obez) ve yaş grupları oluşturuldu (Genç, Orta Yaş, Yaşlı, Çok Yaşlı).**
 - **Özellik ölçekleme yapıldı. BMI, uyku saatleri, diyet kalitesi ve alkol tüketimi için Z-puanı dönüşümleri uygulandı.**
   
